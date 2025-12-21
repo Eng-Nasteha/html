@@ -1,0 +1,240 @@
+<!--
+Responsive Dashboard (single-file)
+Save as: responsive-dashboard.html and open in your browser.
+Uses: Tailwind CDN + Chart.js CDN
+Author: ChatGPT
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Dashboard — Example</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root{font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+    /* small custom bits to complement Tailwind */
+    .sidebar-scroll{height: calc(100vh - 3.5rem); overflow:auto}
+    .card-shadow{box-shadow: 0 6px 20px rgba(7,13,47,0.06)}
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <div class="min-h-screen flex">
+    <!-- SIDEBAR -->
+    <aside id="sidebar" class="w-64 bg-white border-r hidden md:block">
+      <div class="px-6 py-4 border-b">
+        <h1 class="text-xl font-semibold">My Dashboard</h1>
+        <p class="text-sm text-slate-500">Overview & analytics</p>
+      </div>
+      <nav class="px-4 mt-4 sidebar-scroll">
+        <ul class="space-y-1">
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-slate-100" href="#">🏠 Home</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-slate-100" href="#">📊 Analytics</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-slate-100" href="#">🧾 Reports</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-slate-100" href="#">⚙️ Settings</a></li>
+          <li><a class="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-slate-100" href="#">🔒 Logout</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="flex-1">
+      <!-- TOPBAR -->
+      <header class="flex items-center justify-between bg-white px-4 py-3 border-b">
+        <div class="flex items-center gap-3">
+          <button id="btnToggle" class="md:hidden p-2 rounded-md hover:bg-slate-100">☰</button>
+          <h2 class="text-lg font-semibold">Dashboard</h2>
+          <span class="text-sm text-slate-500">Welcome back, Admin</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <input class="hidden sm:inline-block px-3 py-2 border rounded-md" placeholder="Search..." />
+          <div class="flex items-center gap-3">
+            <div class="text-sm text-slate-600">EN</div>
+            <img src="https://api.dicebear.com/6.x/initials/svg?seed=Admin" alt="avatar" class="w-8 h-8 rounded-full" />
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT -->
+      <main class="p-6">
+        <!-- KPI CARDS -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+          <div class="bg-white p-4 rounded-lg card-shadow">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-sm text-slate-500">Total Revenue</div>
+                <div class="text-2xl font-semibold">$34,820</div>
+              </div>
+              <div class="text-sm text-green-600 font-medium">+7.2%</div>
+            </div>
+          </div>
+
+          <div class="bg-white p-4 rounded-lg card-shadow">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-sm text-slate-500">Active Users</div>
+                <div class="text-2xl font-semibold">4,092</div>
+              </div>
+              <div class="text-sm text-amber-600 font-medium">+1.1%</div>
+            </div>
+          </div>
+
+          <div class="bg-white p-4 rounded-lg card-shadow">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-sm text-slate-500">New Signups</div>
+                <div class="text-2xl font-semibold">512</div>
+              </div>
+              <div class="text-sm text-red-600 font-medium">-2.3%</div>
+            </div>
+          </div>
+
+          <div class="bg-white p-4 rounded-lg card-shadow">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-sm text-slate-500">Server Uptime</div>
+                <div class="text-2xl font-semibold">99.98%</div>
+              </div>
+              <div class="text-sm text-green-600 font-medium">Stable</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CHART + ACTIVITY -->
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+          <div class="lg:col-span-2 bg-white p-4 rounded-lg card-shadow">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-semibold">Sales (last 30 days)</h3>
+              <div class="text-sm text-slate-500">Updated: <strong>Today</strong></div>
+            </div>
+            <canvas id="lineChart" height="140"></canvas>
+          </div>
+
+          <div class="bg-white p-4 rounded-lg card-shadow">
+            <h3 class="font-semibold mb-3">Top Products</h3>
+            <ul class="space-y-3">
+              <li class="flex items-center justify-between">
+                <div>
+                  <div class="text-sm font-medium">Product A</div>
+                  <div class="text-xs text-slate-500">321 sales</div>
+                </div>
+                <div class="text-sm text-slate-600">45%</div>
+              </li>
+              <li class="flex items-center justify-between">
+                <div>
+                  <div class="text-sm font-medium">Product B</div>
+                  <div class="text-xs text-slate-500">210 sales</div>
+                </div>
+                <div class="text-sm text-slate-600">29%</div>
+              </li>
+              <li class="flex items-center justify-between">
+                <div>
+                  <div class="text-sm font-medium">Product C</div>
+                  <div class="text-xs text-slate-500">98 sales</div>
+                </div>
+                <div class="text-sm text-slate-600">14%</div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- TABLE -->
+        <section class="bg-white p-4 rounded-lg card-shadow">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-semibold">Recent Orders</h3>
+            <button id="downloadCSV" class="px-3 py-1 text-sm border rounded">Export CSV</button>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm table-auto">
+              <thead class="text-slate-600 text-left">
+                <tr>
+                  <th class="px-3 py-2">Order #</th>
+                  <th class="px-3 py-2">Customer</th>
+                  <th class="px-3 py-2">Amount</th>
+                  <th class="px-3 py-2">Status</th>
+                  <th class="px-3 py-2">Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-t">
+                  <td class="px-3 py-2">#1023</td>
+                  <td class="px-3 py-2">Amina</td>
+                  <td class="px-3 py-2">$129.00</td>
+                  <td class="px-3 py-2 text-green-600">Paid</td>
+                  <td class="px-3 py-2">2025-11-28</td>
+                </tr>
+                <tr class="border-t">
+                  <td class="px-3 py-2">#1024</td>
+                  <td class="px-3 py-2">Jamal</td>
+                  <td class="px-3 py-2">$49.00</td>
+                  <td class="px-3 py-2 text-amber-600">Pending</td>
+                  <td class="px-3 py-2">2025-11-29</td>
+                </tr>
+                <tr class="border-t">
+                  <td class="px-3 py-2">#1025</td>
+                  <td class="px-3 py-2">Hodan</td>
+                  <td class="px-3 py-2">$220.00</td>
+                  <td class="px-3 py-2 text-red-600">Refunded</td>
+                  <td class="px-3 py-2">2025-11-30</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+      </main>
+
+      <footer class="p-4 text-center text-sm text-slate-500">© 2025 My Dashboard · Built with HTML + Tailwind + Chart.js</footer>
+    </div>
+  </div>
+
+  <script>
+    // Sidebar toggle for small screens
+    const btn = document.getElementById('btnToggle');
+    const sidebar = document.getElementById('sidebar');
+    btn?.addEventListener('click', ()=>{
+      if(sidebar.classList.contains('hidden')) sidebar.classList.remove('hidden');
+      else sidebar.classList.add('hidden');
+    })
+
+    // Charts: Sample data
+    const ctx = document.getElementById('lineChart');
+    if(ctx){
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: Array.from({length: 30}, (_,i)=>`Day ${i+1}`),
+          datasets: [{
+            label: 'Revenue',
+            data: Array.from({length:30}, ()=> Math.floor(Math.random()*900)+200),
+            tension: 0.35,
+            fill: true,
+            backgroundColor: 'rgba(99,102,241,0.08)',
+            borderColor: 'rgb(99,102,241)'
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {legend: {display:false}},
+          scales: {y:{beginAtZero:true}}
+        }
+      })
+    }
+
+    // Export table to CSV (very small helper)
+    document.getElementById('downloadCSV')?.addEventListener('click', ()=>{
+      const rows = Array.from(document.querySelectorAll('table tr'))
+        .map(tr=>Array.from(tr.querySelectorAll('th,td')).map(td=>`"${td.innerText.replace(/"/g,'""')}"`).join(','))
+        .join('\n');
+      const blob = new Blob([rows], {type: 'text/csv;charset=utf-8;'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = 'orders.csv'; a.click(); URL.revokeObjectURL(url);
+    });
+  </script>
+</body>
+</html>

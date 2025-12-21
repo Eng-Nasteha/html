@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: black;
+        }
+
+        .box{
+            width: 150px;
+            height: 80px;
+            border: 3px solid white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .box::before{
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -13px;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 25px;
+            border: 3px solid white;
+        }
+
+        .box::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: white;
+            border-radius: 5px;
+            animation: animate 5s linear infinite;
+        }
+
+        @keyframes animate{
+            0%{
+                width: 0%;
+                background: red;
+            }
+            25%{
+                width: 25%;
+                background: rgb(249, 177, 7);
+            }
+            50%{
+                width: 50%;
+                background: yellow;
+            }
+            75%{
+                width: 75%;
+                background: rgb(183, 244, 60);
+            }
+            100%{
+                width: 100%;
+                background: green;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main_outer">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

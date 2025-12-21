@@ -1,3 +1,15 @@
 body{
-    background-color: rgb(175, 220, 39);
+    background-image: url(./fav.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
 }
+.dec{
+    color: rgb(11, 218, 73);
+    font-family: 'Times New Roman', Times, serif;
+}
+#bi{
+    color: blue;
+    
+  

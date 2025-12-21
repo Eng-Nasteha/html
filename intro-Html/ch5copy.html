@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+
+    <!-- Font Awesome 4.7 -->
+    <link rel="stylesheet"
+     href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .navbar{
+            background: rgb(236, 156, 9);
+            border: 2px solid rgb(54, 36, 36);
+            margin: 20px 30px;
+            box-shadow: 8px 8px 8px paleturquoise;
+            padding: 10px 20px;
+        }
+
+        .nav-div{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .log img{
+            width: 100px;
+            height: 100px;
+        }
+
+        ul{
+            list-style: none;
+        }
+
+        ul li{
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        ul li a{
+            color: black;
+            font-weight: bold;
+            font-size: 25px;
+            /* padding: 8px 12px; */
+        }
+
+        ul li a i{
+            margin-right: 6px;
+        }
+
+        ul li a:hover{
+            background: palegreen;
+            border-radius: 5px;
+        }
+
+            ul li i{
+                color: rgb(234, 156, 217);
+            }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="nav-div">
+
+        <div class="log">
+            <img src="logo.png" alt="Logo">
+        </div>
+
+        <ul>
+            <li>
+                <a href="Home.html">
+                    <i class="fa fa-home"></i> Home
+                </a>
+            </li>
+
+            <li>
+                <a href="About.html">
+                    <i class="fa fa-user"></i> About
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    <i class="fa fa-phone"></i> Contact
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+</body>
+</html>
