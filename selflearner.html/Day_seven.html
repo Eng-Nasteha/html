@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nasteha Portfolio</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #7f3fbf;
+        color: white;
+    }
+
+    /* NAVBAR */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: white;
+        color: purple;
+        padding: 15px 30px;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        padding: 0;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: purple;
+        font-weight: bold;
+    }
+
+    /* SECTIONS */
+    section {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .box {
+        background: rgba(255,255,255,0.15);
+        padding: 20px;
+        border-radius: 12px;
+        width: 80%;
+        margin: auto;
+    }
+
+    /* SKILLS */
+    .skills {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .skill {
+        background: white;
+        color: purple;
+        padding: 15px 25px;
+        border-radius: 8px;
+    }
+
+    /* CONTACT FORM */
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 300px;
+        margin: auto;
+    }
+
+    input, textarea {
+        padding: 10px;
+        border-radius: 6px;
+        border: none;
+    }
+
+    button {
+        padding: 10px;
+        background: white;
+        color: purple;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    /* FOOTER */
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: rgba(255,255,255,0.1);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+        nav ul {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .box {
+            width: 95%;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h2>Nasteha</h2>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+    <div class="box">
+        <h1>Hi, I'm Nasteha 👋</h1>
+        <p>Aspiring Web Developer & Designer</p>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="box">
+        <h2>About Me</h2>
+        <p>
+            My name is Nasteha. I am learning web development and I love creating
+            beautiful and responsive websites.
+        </p>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+    <div class="box">
+        <h2>My Skills</h2>
+        <div class="skills">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">Flexbox</div>
+            <div class="skill">Responsive Design</div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="box">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea rows="4" placeholder="Your Message"></textarea>
+            <button>Send Message</button>
+        </form>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2025 Nasteha Portfolio — All rights reserved</p>
+</footer>
+
+</body>
+</html>

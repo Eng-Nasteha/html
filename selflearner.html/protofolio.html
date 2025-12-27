@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header{
+            background: linear-gradient(150deg, rgba(35,56,66,0.9), rgba(40, 30, 70, 0.3));
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        
+        nav ul{
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+        nav ul li a:hover{
+            color: orange;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .about-me {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        .about-me img {
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        /* Qaybta Projects oo la habeeyay */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr ));
+            gap: 20px;
+        }
+        .project-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="container">
+        <h2>About Me</h2>
+        <div class="about-me">
+            <img src="https://i.pinimg.com/1200x/be/5c/2c/be5c2cc7874e4a3de0c0a85fd3f3c4c3.jpg" width="250" height="200">
+            <p>Kani waa qoraal kooban oo ku saabsan naftaada. Waxaad halkan ku qori kartaa aqoontaada, khibradaada, iyo waxyaabaha aad xiisayso.</p>
+        </div>
+
+        <hr style="margin: 40px 0; opacity: 0.2;">
+
+        <h2>My Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="https://i.pinimg.com/1200x/67/f2/8b/67f28be2f888ff8c15f59dadaa15550e.jpg" alt="Project 1">
+                <h3>Project One</h3>
+                <p>Sharaxaad kooban oo ku saabsan mashruucan iyo wixii aad ku qabatay.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="https://i.pinimg.com/1200x/c0/72/8b/c0728be8022bf2e9acde6c4ce0df4fb1.jpg" alt="Project 2">
+                <h3>Project Two</h3>
+                <p>Sharaxaad kooban oo ku saabsan mashruucan iyo wixii aad ku qabatay.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="https://i.pinimg.com/736x/bf/06/8d/bf068d91521fe9a9e604b521886eaa69.jpg" alt="Project 3">
+                <h3>Project Three</h3>
+                <p>Sharaxaad kooban oo ku saabsan mashruucan iyo wixii aad ku qabatay.</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

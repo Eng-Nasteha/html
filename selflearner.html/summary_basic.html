@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="arig.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *{
+            box-sizing: border-box;
+            
+        }
+        body{
+            background-color: rgb(46, 226, 226);
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0px;
+            padding: 15px;
+            
+        }
+        .navbar {
+                background-color: blue;
+                color: rgb(217, 215, 212);
+                font-weight: bold;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-radius: 8px;
+                
+        }
+        .navbar ul {
+              display: flex;
+              list-style: none;
+              gap: 60px;
+              align-items: center;
+              text-align: center;
+              padding-right: 15px;
+              
+        }
+        
+        .navbar a {
+                text-decoration: none;
+                color: aquamarine;
+        }
+        .navbar ul :hover{
+           
+            color: rgb(72, 79, 84);
+        }
+     footer{
+        background-color: rgb(70, 49, 49);
+        color: bisque;
+        font-size: medium;
+        font-weight: bold;
+        padding: 8px;
+        margin-top: 10px;
+        text-align: center;
+     } 
+     .background{
+        height: 70vh;
+        width: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("https://i.pinimg.com/736x/3a/d3/05/3ad3055735ff083eee0bd9d6f35dc38d.jpg");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 10px;
+      
+     }
+     .background h1{
+        color: rgb(237, 236, 240);
+
+     }
+     .background h1 span{
+        color: rgb(4, 132, 124);
+     }
+     
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1 style="margin-left: 10px;">Nagaad hospital</h1>
+        <ul>
+            <li><a href="#home" class="fa fa-user">Home</a></li>
+            <li><a href="#about" class="fa fa-info-circle">About</a></li>
+            <li><a href="contact.html" class="fa fa-phone">Contact</a></li>
+            
+        </ul>
+        
+    </nav>
+    <main>
+        <div class="background">
+            <h1>welcome to <span>Nagaad</span> hospital</h1>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; All right are reserved @Nagaad hospital</p>
+    </footer>
+</body>
+</html>

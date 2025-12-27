@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: aqua;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 20px;
+            color:white;
+        }
+        header{
+            background-color: black;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            
+        }
+        .nav ul{
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        .nav ul li a{
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .nav ul li a:hover{
+            color: orange;
+        }
+        .home{
+             height: 75vh;
+            width: 100%;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.3)), url("https://i.pinimg.com/736x/3a/d3/05/3ad3055735ff083eee0bd9d6f35dc38d.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        .home h1{
+            text-align: center;
+            padding-top: 100px;
+            font-size: 40px;
+        }
+        .home h1 span{
+            color: orange;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            
+            /* width: 200px; */
+           
+            margin-top: 75px;
+            padding: 20px;
+        }
+        .card{
+            background-color: beige;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #000;
+            font-size: medium;
+             border-radius: 15px;
+
+
+        }
+        .card image{
+            border-radius: 45px;
+        }
+        .btn{
+            background-color: orange;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            font-size: 20px;
+            margin-top: 20px;
+            border-radius: 15px;
+        
+            margin-bottom: 20px;    
+        }
+        .btn:hover{
+            background-color: darkorange;
+        }
+        .NB{
+            border-radius: 20px;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <h2>nasteha Hospital</h2>
+        <nav class="nav">
+            <ul>
+                <li><a href=home.html>Home</a></li>
+                <li><a href=aboyut.html>about</a></li>
+                <li><a href=project.html>project</a></li>
+                <li><a href=contact.html>contact</a></li>
+            </ul>
+
+        </nav>
+        
+    </header>
+    <main>
+        <div class="home">
+            <h1>Welcome to <span>Nasteha</span> Hospital</h1>
+        </div>
+        <H2 style="color: #000; text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; padding-top: 40px;">Our Departments</H2>
+        <div class="container">
+            <div class="card">
+                <img src="https://i.pinimg.com/736x/c1/d3/0d/c1d30dacdb2fdef4c89d0616d26b19d7.jpg"width=100 height="100" class="NB">
+                <h3> cardiology</h3>
+                <p style="color: blue; text-align: center;">cardiology department</p>
+                <button class=btn>view detail</button>
+
+                
+            </div>
+            <div class="card">
+                <img src="https://i.pinimg.com/736x/c1/d3/0d/c1d30dacdb2fdef4c89d0616d26b19d7.jpg"width=100 height="100" class="NB">
+                <h3> cardiology</h3>
+                <p style="color: blue; text-align: center;">cardiology department</p>
+                <button class=btn>view detail</button>
+
+                
+            </div>
+            <div class="card">
+                <img src="https://i.pinimg.com/736x/c1/d3/0d/c1d30dacdb2fdef4c89d0616d26b19d7.jpg"width=100 height="100" class="NB">
+                <h3> cardiology</h3>
+                <p style="color: blue; text-align: center;">cardiology department</p>
+                <button class=btn>view detail</button>
+
+                
+            </div>
+            <div class="card">
+                <img src="https://i.pinimg.com/736x/c1/d3/0d/c1d30dacdb2fdef4c89d0616d26b19d7.jpg"width=100 height="100" class="NB">
+                <h3> cardiology</h3>
+                <p style="color: blue;">cardiology department</p>
+                <button class=btn>view detail</button>
+
+                
+            </div>
+               <div class="card">
+                <img src="https://i.pinimg.com/736x/c1/d3/0d/c1d30dacdb2fdef4c89d0616d26b19d7.jpg"width=100 height="100" class="NB">
+                <h3> cardiology</h3>
+                <p style="color: blue;">cardiology department</p>
+                <button class=btn>view detail</button>
+
+                
+            </div>
+               <div class="card">
+                <img src="https://i.pinimg.com/736x/c1/d3/0d/c1d30dacdb2fdef4c89d0616d26b19d7.jpg"width=100 height="100" class="NB">
+                <h3> cardiology</h3>
+                <p style="color: blue;">cardiology department</p>
+                <button class=btn>view detail</button>
+
+                
+            </div>
+
+        </div>
+    </main>
+</body>
+</html

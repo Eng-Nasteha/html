@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Courier New', Courier, monospace;
+            background-color:#333;
+
+        }
+        header{
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            /* text-align: center; */
+        }
+        .nav{
+            list-style: none;
+            display: flex;
+            justify-content: end;
+            gap: 35px;
+        }
+        .nav a{
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            
+        }
+        .nav a:hover{
+            color: orange;
+        }
+        .Home{
+            height: 70vh;
+            width: 100%;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.3)), url("https://i.pinimg.com/736x/eb/cb/c6/ebcbc6aaa9deca9d6efc1efc93b66945.jpg");
+            background-size: cover;
+            background-position: center;
+            
+        }
+        .home-content{
+            color: white;
+            text-align: center;
+            padding-top: 200px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+            font-size: 35px;
+        }
+        .home-content span{
+            color: orange;
+        } 
+        .menu{
+            display: flex;
+            justify-content:space-between;
+            /* padding: 60px 100px; */
+            gap: 30px;
+            margin: 20px;
+            grid-template-columns: 4;
+
+        }
+        .product{
+            background-color: beige;
+            padding: 20px;
+            text-align: center;d
+            border-radius: 10px;
+            margin-top: 20px;
+            width: 800px;
+           
+            
+        }
+        .product{
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+        }
+        .price{
+            color: green;
+            font-weight: bold;
+
+        }
+        .btn{
+            background-color: orange;
+            color: white;
+            padding: 10px 15px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+        .btn:hover{
+            background-color: darkorange;
+        }
+        .footer{
+            background-color:orange;
+            padding: 20px;
+            margin-top: 40px;
+            color: white;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="color: aliceblue; justify-content:start; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; padding-top: 25px;"> This is fd page</h1>
+        <ul class="nav">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="project.html">project</a></li>
+            <li><a href="contac.html">contact</a></li>
+        </ul>
+    </header>
+    <main >
+        <div class="Home">
+            <h1 class="home-content">cunto <span>macaan</span> oo <span> dhadhan</span> wanaagsan leh</h1>
+
+        </div>
+         <h1 style="color: azure; text-align: center; display: block; margin-top: 20px;font-family: Georgia, 'Times New Roman', Times, serif; font-weight: bold;" >Menu cunto</h1>
+        <div class="menu">
+           
+
+           
+           
+            <div class="product">
+           <img src="https://i.pinimg.com/1200x/47/f7/bb/47f7bb0716ceec2f1ed62cead5f37bb1.jpg " height="150px" width="150px">
+             <h4>Baasta saltata</h4>
+             <p class="price">$5.00</p> 
+             <button class="btn">order now</button>
+           </div>
+            <div class="product">
+           <img src="https://i.pinimg.com/1200x/d7/ff/8c/d7ff8c0a61814346f91a8268044c6589.jpg " height="150px" width="150px">
+           <h4>Rice with chicken</h4>
+             <p class="price">$4.00</p>
+             <button class="btn">order now</button>
+               </div>
+           <div class="product">
+           <img src="https://i.pinimg.com/1200x/94/82/ab/9482ab2e248d249e7daa7fd6924c8d3b.jpg " height="150px" width="150px">
+             <h4>Rice with chicken</h4>
+             <p class="price">$4.00</p>
+             <button class="btn">order now</button>
+              
+           </div>
+           <div class="product">
+           <img src="https://i.pinimg.com/736x/02/16/ed/0216ed5035ddc708aea2afde7cc61050.jpg " height="150px" width="150px">
+             <h4>pizza with chicken</h4>
+             <p class="price">$12.00</p>
+             <button class="btn">order now</button>
+              
+           </div>
+            <div class="product">
+           <img src="https://i.pinimg.com/1200x/12/bf/a2/12bfa26dfe17d870676f2493854623f8.jpg" height="150px" width="150px">
+             <h4>Fruits</h4>
+             <p class="price">$1.500</p>
+             <button class="btn">order now</button>
+              
+            </div>
+             <div class="product">
+           <img src="https://i.pinimg.com/1200x/f3/a3/e7/f3a3e79d662b87dca0c68b729446d755.jpg" height="150px" width="150px">
+             <h4>water</h4>
+             <p class="price">$1.500</p>
+             <button class="btn">order now</button>
+              
+            </div>
+           
+            
+
+         </div>
+     
+
+    </main>
+    <footer  class="footer">
+        <p>&copy; 2025 fd resrtuarant. all rights reserved.</p>
+    </footer>
+</body>
+</html>

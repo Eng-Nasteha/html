@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 20px;
+            color: black;
+
+        }
+        .container{
+           background-color: #333;
+            max-height: 1000px;
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .cards{
+            background-color: wheat;
+            width: 500px;
+            padding: 15px;
+            margin: auto;
+            text-align: center;
+            border-radius: 10px;
+            animation: bounce 2s ease-in;
+        }
+        @keyframes bounce{
+            0% 100%{
+                transform: translatey(30%)
+
+
+            }
+            50%{
+                transform: translatey(-3px)
+                
+            }
+                
+            
+        }
+        @media(max-wdth:480px){
+            h2{
+                font-size: 1.2rem;
+
+            }
+            p{
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="cards">
+            <img src="https://i.pinimg.com/736x/64/77/29/64772901a0b1222b9089cb3aec4acc6f.jpg" width="500" height="400">
+            <h2>poster design</h2>
+            <p>Design a poster for a music event</p>
+        </div>
+    </section>
+</body>
+</html>
